@@ -5,3 +5,5 @@ array = np.array(list_data)
 
 print(array.size)
 print(array.dtype)
+
+print("test")
