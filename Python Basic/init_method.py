@@ -28,3 +28,21 @@ p3 = Person('Aaron')
 print(p1.name, p1.age)
 print(p2.name, p2.age)
 print(p3.name, p3.age)
+
+
+
+
+# init 함수는 객체 생성될 때 불러와짐
+# call 함수는 인스턴스 생성될 때 불러와짐
+
+class A:
+    def __init__(self):
+        print('init')
+    def __call__(self):
+        print('call')
+
+a = A()
+
+a()
+
+print('a = ',a)
