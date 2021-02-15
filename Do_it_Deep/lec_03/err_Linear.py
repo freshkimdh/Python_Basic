@@ -70,8 +70,8 @@ print(w_new, b_new)
 # 반복문 사용
 for x_i, y_i in zip(x,y):
     y_hat = x_i * w + b
-    err = y_i - y_hat
-    w_rate = x_i
+    err = y_i - y_hat # 오차
+    w_rate = x_i # 예측값 증가 확인
     w = w + w_rate * err
     b = b + 1 * err
 
