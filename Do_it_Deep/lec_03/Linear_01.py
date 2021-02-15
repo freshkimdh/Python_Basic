@@ -7,6 +7,3 @@ diabets = load_diabetes()
 x = diabets.data[:,2]
 y = diabets.target
 
-
-
-
