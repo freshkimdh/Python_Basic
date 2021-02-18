@@ -1,31 +1,30 @@
-from sklearn.datasets import load_diabetes
-import matplotlib.pyplot as plt
 import numpy as np
 
-diabets = load_diabetes()
-
-# print(diabets.data[:,2])
-# print(diabets.data[:2])
-
-# plt.scatter(diabets.data[:, 2], diabets.target)
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.show()
+x_i = [[1,2,3,4,5],[1,2,3]]
+y_i = [[1,2,3,4,5],[1,2,4]]
 
 
-a = np.array([[1,2,3,4,5],[6,7,8,9,10]])
 
-b = a[:2]
+# 4. w, b를 조정하면서 y_hat(z) 구하는 함수 생성
+def forpass(self, x):
+    z = np.sum(x * self.w) + self.b # 시그마 w * x
+    return z
 
 
-# print(b)
-# print(a.shape) 
+    # 6. activation() 메소드 생성
+def activation(self, z):
+    np.warnings.filterwarnings('ignore', 'overflow') # overflow 무시
+    a = 1 / (1 + np.exp(-z)) # 시그모이드 계산
+    return a
 
-#print(diabets.data[:, 2])
-# print(a)
-print(a[0,:])
-# b = a[:2]
-# print(b)
+def predict(self, x):
+    z = [self.forpass(x_i) for x_i in x]    # 선형 함수 적용
+    a = self.activation(np.array(z))        # 활성화 함수 적용
+    return a > 0.5  
 
-# c = a[:,1]
-# print(c)
+
+
+test = np.mean(x_i == y_i)
+# test = np.mean(neuron.predict(x_test) == y_test)
+
+print(test)
