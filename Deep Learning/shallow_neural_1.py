@@ -3,7 +3,12 @@ import matplotlib.pyplot as plt
 
 # 얕은 신경망을 이용한 다중 분류 문제
 
-# 함수 구현
+# 1. 함수 구현 (Activation function)
+# 2. 네트워크 구조 정의
+
+
+
+# 1. 함수 구현 (Activation function)
 
 # sigmoid 함수
 # 값이 작아질수록 0, 커질 수록 1dp tnfua
@@ -19,7 +24,8 @@ def softmax(x):
     return e_x / np.sum(e_x)
 
 
-# 네트워크 구조 정의
+
+# 2. 네트워크 구조 정의
 class ShallowNN:
     # num_input : input layer 뉴런 갯수
     # num_hidden : hidden layer 뉴런 갯수
